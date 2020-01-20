@@ -1,7 +1,12 @@
 ---
 # tasks file for add_user
 - name: Add User to the System
-  shell: useradd -d {{ home_dir }} -c {{ real_name }} -s {{ default_shell }} -m {{ username }}
+  user:
+    name: "{{ username }}"
+    comment: "{{ real_name }}"
+    shell: "{{ default_shell }}"
+    create_home: True
+    home: "{{ home_dir }}"
 
 - name: Change the password of the user
   shell: echo {{ password }} | passwd --stdin {{ username }}
