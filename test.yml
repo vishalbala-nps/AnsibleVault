@@ -1,0 +1,15 @@
+- hosts: fedora
+  remote_user: vishal
+  become: yes
+  become_user: root
+
+  vars_prompt:
+    - name: username
+      prompt: "Please Enter the Username"
+      private: no
+
+    - name: password
+      prompt: "Please Enter the password"
+      private: yes
+  roles:
+    - add_user

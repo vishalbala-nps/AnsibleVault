@@ -1,0 +1,5 @@
+---
+# vars file for add_user
+home_dir: /home/"{{ username }}" #Change this if you want to have a different home dierectory for the user
+real_name: "{{ username }}" #Change this if you want a different Username for the user
+default_shell: /bin/bash #Change this if you want a different shell for the user
